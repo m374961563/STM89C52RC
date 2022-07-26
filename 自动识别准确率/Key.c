@@ -10,6 +10,7 @@ sbit K2=P3^0;//K2引脚
 sbit K3=P3^2;//K3引脚
 sbit K4=P3^3;//K4引脚
 
+//键码保存
 unsigned char Get_Key_NumBer;
 
 /**
@@ -29,38 +30,9 @@ void Key_Loop()
     //消抖及松手检测
     LastKey=NowKey;
     NowKey=Key_Number;//获取当前按键状态
-    //当按键按下时间超过5ms时才输出按键键码
+    //当按键按下时间超过10ms,并且松手才输出按键键码
     if(LastKey>0&&NowKey==0)
     {
         LastKey=Get_Key_NumBer;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
